@@ -1,6 +1,5 @@
 package org.example;
 
-import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
 public class TestSuit extends BaseTest {
@@ -14,6 +13,11 @@ public class TestSuit extends BaseTest {
     AppleMacBookPro13Inch appleMacBookPro13Inch = new AppleMacBookPro13Inch();
     ProductEmailAFriend productEmailAFriend = new ProductEmailAFriend();
     CompareProduct compareProduct = new CompareProduct();
+    FaceBookPage faceBookPage = new FaceBookPage();
+    New_Release new_release = new New_Release();
+    BuildYourOwnComputerPage buildYourOwnComputerPage = new BuildYourOwnComputerPage();
+    CheckoutAsGuest checkoutAsGuest = new CheckoutAsGuest();
+    OnePageCheckout onePageCheckout = new OnePageCheckout();
 
 
     @Test
@@ -39,7 +43,7 @@ public class TestSuit extends BaseTest {
 
     }
     @Test
-    public void verifyUserShouldBeAbleToVoteSuccessfully(){
+    public void verifyUserShouldBeAbleToVoteSuccessfully() {
         //click on good button
         homePage.clickOnGoodButton();
         //click on vote button
@@ -106,5 +110,54 @@ public class TestSuit extends BaseTest {
         compareProduct.verifyProductComparison();
         //
     }
+    @Test
+    public void verifyToPrintAllTheProductNameFromHomepage(){
+        //print all the products name form home page
+        homePage.printOutProductTitle();
+    }
+    @Test
+    public void verifySearchAlertMessage(){
+        //verify search alert message
+        homePage.verifySearchAlert();
+    }
+    @Test
+    public void VerifyUserShouldBeAbleToSelectCurrencyVerifyAccordinglyOnHomepage(){
+        homePage.verifyCurrencyDropDown();
+        homePage.productPriceInDollar();
+        homePage.productPriceInEuro();
+    }
+    @Test
+    public void VerifyUserClickOnFaceBookPageCanDoAllAction() throws InterruptedException {
+        homePage.clickOnFaceBook();
+        faceBookPage.verifyFaceBook();
+        homePage.verifyWelcomeMessage();
+
+    }
+    @Test
+    public void VerifyVoteAlertMessageWithoutClickAnyOption(){
+        homePage.clickOnVoteButton();
+        homePage.verifyVoteAlertMessage();
+
+    }
+    @Test
+    public void VerifyNewsRelease(){
+        homePage.clickOnNewsRelease();
+        new_release.newReleaseUpdate();
+        new_release.verifyLastAddedComment();
+
+    }
+    @Test
+    public void VerifyUserShouldBeAbleToSearchForTheGivenProductSuccessfully(){
+        homePage.inputInSearch("nike");
+    }
+    @Test
+    public void VerifyGuestUserCheckoutSuccessfully() {
+        homePage.addToCartBuildYourOwnComputer();
+        buildYourOwnComputerPage.addDetailsOfBuildYourOwnComputer();
+        shoppingCartPage.verifyProductDetailsFromShoppingCart();
+        checkoutAsGuest.checkoutAsGuestSuccessfully();
+        onePageCheckout.fillTheDetails();
+    }
+
 }
 
