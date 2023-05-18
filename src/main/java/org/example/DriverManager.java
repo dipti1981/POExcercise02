@@ -2,7 +2,9 @@ package org.example;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 
+
 public class DriverManager extends Utils{
+   // String browserName = "edge";
     public static void openBrowser(){
         //open Chrome browser
         driver = new ChromeDriver();

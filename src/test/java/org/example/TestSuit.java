@@ -68,7 +68,7 @@ public class TestSuit extends BaseTest {
 
     }
     @Test
-    public void verifyUserRegisteredUserShouldBeAbleToReferProductToAFriendSuccessfully(){
+    public void verifyRegisteredUserShouldBeAbleToReferProductToAFriendSuccessfully(){
         //click on register
         homePage.clickOnRegisterButton();
         //fill the elements

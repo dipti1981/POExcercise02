@@ -191,9 +191,8 @@ public class HomePage extends Utils {
         clickOnTheElement(_searchButton);
         //print all product name
         listMethod(_productGrid);
-
-        }
-        public void addToCartBuildYourOwnComputer(){
+    }
+       public void addToCartBuildYourOwnComputer(){
         //click on product
         clickOnTheElement(_buildYourOwnComputerAddToCart);
 
