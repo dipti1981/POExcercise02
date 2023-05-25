@@ -33,6 +33,10 @@ public class Utils extends BasePage {
         return driver.findElement(by).getText();
     }
 
+    public static String getCurrentURL(){
+        return driver.getCurrentUrl();
+    }
+
     public static void selectElementByText(By by, String text) {
         Select select = new Select(driver.findElement(by));
         select.selectByVisibleText(text);

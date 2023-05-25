@@ -1,6 +1,7 @@
 package org.example;
 
 import org.openqa.selenium.By;
+import org.testng.Assert;
 
 public class BuildYourOwnComputerPage extends Utils{
     private By _processorDropDown = By.xpath("//dd[@id = 'product_attribute_input_1']/select");
@@ -28,6 +29,8 @@ public class BuildYourOwnComputerPage extends Utils{
         clickOnTheElement(_addToCart);
         explicitWaitInvisible(_closeBar);
         clickOnTheElement(_shoppingCart);
+        System.out.println("URL :"+getCurrentURL());
+        Assert.assertTrue(getCurrentURL().contains("cart"));
 
     }
 }

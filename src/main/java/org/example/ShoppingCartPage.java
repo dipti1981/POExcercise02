@@ -9,7 +9,8 @@ public class ShoppingCartPage extends Utils{
     private By _detailsFromShoppingCart = By.xpath("//td[@class='product']/div[1]");
     private By _checkOut = By.xpath("//button[@id ='checkout']");
     private By _termsOfService = By.xpath("//input[@id = 'termsofservice']");
-    String productNameBeforeAddToCart = "Leic T Mirroless Digital Camera";
+    String productNameBeforeAddToCart = "Build your own computer";
+
     String expectedResult = "Processor: 2.5 GHz Intel Pentium Dual-Core E2200 [+$15.00]\n" +
             "RAM: 8GB [+$60.00]\n" +
             "HDD: 320 GB\n" +
@@ -18,7 +19,7 @@ public class ShoppingCartPage extends Utils{
             "Software: Acrobat Reader [+$10.00]\n" +
             "Software: Total Commander [+$5.00]";
     public void verifyProductNameFromShoppingCart(){
-        String productNameFromShoppingCart = getTextFromElement(_leicaCameraShoppingCart);
+        String productNameFromShoppingCart = getTextFromElement(_buildYourOwnComputerShoppingCart);
         System.out.println("Product name from shopping cart is: "+productNameFromShoppingCart);
         //Assert to verify the actual message and expected message
         Assert.assertEquals(productNameBeforeAddToCart,productNameFromShoppingCart);
